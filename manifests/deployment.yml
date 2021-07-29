@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nhutpmkeycloak 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nhutpmkeycloak
+  template:
+    metadata:
+      labels:
+        app: nhutpmkeycloak 
+    spec:
+      containers:
+        - name: nhutpmkeycloak 
+          image: devopsacr1176227.azurecr.io/nhutpmkeycloak
+          ports:
+          - containerPort: 80
